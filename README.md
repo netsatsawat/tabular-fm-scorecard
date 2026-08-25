@@ -1,4 +1,14 @@
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License: MIT"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.12"></a>
+  <img src="https://img.shields.io/badge/datasets-4%20real-2a78d6?style=for-the-badge" alt="4 real datasets">
+  <img src="https://img.shields.io/badge/API%20keys-none-1baf7a?style=for-the-badge" alt="No API keys">
+  <a href="https://satsawat.ai"><img src="https://img.shields.io/badge/author-satsawat.ai-e8a112?style=for-the-badge" alt="Author: satsawat.ai"></a>
+</p>
+
 # Tabular foundation models against gradient boosting, on real data
+
+Companion code for the writing at [satsawat.ai](https://satsawat.ai).
 
 Four observed datasets, seven models, identical splits, paired bootstrap with Holm
 correction, and prediction cost measured alongside accuracy.
@@ -131,3 +141,13 @@ meant to be.
   the comparison and kept only as a runnability check.
 - [NOTICE.md](NOTICE.md) separates the code licence from the weight licences. The weights
   are not vendored and TabFM's cannot be used commercially.
+
+## Author
+
+Written by [Satsawat Natakarnkitkul](https://satsawat.ai), a data and AI practitioner in
+ASEAN. Newsletter: [AI in Practice](https://satsawat.ai/#newsletter).
+
+Companion repositories: [tsfm-bakeoff](https://github.com/netsatsawat/tsfm-bakeoff) asks the
+same question of time-series foundation models, and
+[agent-failure-lab](https://github.com/netsatsawat/agent-failure-lab) does it for compound
+error in agents.
