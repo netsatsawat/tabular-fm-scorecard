@@ -1,0 +1,37 @@
+{
+  "model": "tabfm_single",
+  "dataset": "credit_g",
+  "n_context_requested": 700,
+  "n_test_requested": 300,
+  "seed": 1234,
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "python": "3.12.13",
+  "status": "ok",
+  "n_context": 700,
+  "n_test": 300,
+  "positive_rate_train": 0.3,
+  "positive_rate_test": 0.3,
+  "n_positives_test": 90,
+  "n_features": 20,
+  "frame": "raw",
+  "n_categorical_columns": 0,
+  "warnings": [],
+  "auc": 0.76455,
+  "fit_seconds": 0.029,
+  "predict_seconds": 51.297,
+  "predict_seconds_per_1k": 170.9902,
+  "peak_rss_gb": 9.21,
+  "proba_min": 0.009284,
+  "proba_max": 0.927129,
+  "proba_mean": 0.269006,
+  "n_unique_proba": 244,
+  "meta": {
+    "n_estimators": 1,
+    "max_num_rows": null,
+    "max_num_features": 500,
+    "classes_": [
+      "0",
+      "1"
+    ]
+  }
+}

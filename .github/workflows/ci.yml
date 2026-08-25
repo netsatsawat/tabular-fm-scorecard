@@ -1,0 +1,25 @@
+name: verify claims
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  claims:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Deliberately no pip install. The verifier reads committed JSON with the
+      # standard library only, and a runner that pip-installed the model stack
+      # still could not reproduce a 6.5 GB checkpoint or a five-hour CPU run.
+      # What CI can check is that no number in the prose has drifted from the
+      # artifact it came from.
+      - name: recompute every claim from the committed artifacts
+        run: python scripts/verify_readme_claims.py

@@ -1,0 +1,32 @@
+{
+  "model": "tabdpt",
+  "dataset": "bank_marketing",
+  "n_context_requested": 1000,
+  "n_test_requested": 1000,
+  "seed": 1234,
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "python": "3.12.13",
+  "status": "ok",
+  "n_context": 1000,
+  "n_test": 1000,
+  "positive_rate_train": 0.117,
+  "positive_rate_test": 0.117,
+  "n_positives_test": 117,
+  "n_features": 16,
+  "warnings": [
+    "builtin type SwigPyObject has no __module__ attribute",
+    "builtin type SwigPyPacked has no __module__ attribute",
+    "builtin type swigvarlink has no __module__ attribute"
+  ],
+  "auc": 0.9235,
+  "fit_seconds": 0.003,
+  "predict_seconds": 0.377,
+  "predict_seconds_per_1k": 0.3768,
+  "peak_rss_gb": 0.85,
+  "proba_min": 0.000342,
+  "proba_max": 0.91503,
+  "proba_mean": 0.112745,
+  "n_unique_proba": 1000,
+  "meta": {},
+  "wall_seconds": 2.1
+}

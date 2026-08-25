@@ -1,0 +1,32 @@
+{
+  "model": "tabfm",
+  "n_context": 2000,
+  "n_test": 2000,
+  "seed": 1234,
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "python": "3.12.13",
+  "status": "ok",
+  "positive_rate_train": 0.0995,
+  "positive_rate_test": 0.0995,
+  "n_features": 67,
+  "warnings": [],
+  "auc": 0.99,
+  "fit_seconds": 0.189,
+  "predict_seconds": 16776.951,
+  "predict_seconds_per_1k": 8388.475,
+  "peak_rss_gb": 9.84,
+  "proba_min": 0.0,
+  "proba_max": 0.999482,
+  "proba_mean": 0.098654,
+  "n_unique_proba": 833,
+  "meta": {
+    "n_estimators": 32,
+    "max_num_rows": null,
+    "max_num_features": 500,
+    "classes_": [
+      "0",
+      "1"
+    ]
+  },
+  "wall_seconds": 16851.1
+}

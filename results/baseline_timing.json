@@ -1,0 +1,156 @@
+{
+  "repeats": 200,
+  "seed": 1234,
+  "datasets": {
+    "ev_battery": {
+      "n_context": 2000,
+      "n_test": 2000,
+      "models": {
+        "xgboost": {
+          "median_seconds_per_call": 0.00198915,
+          "seconds_per_1k": 0.00099457,
+          "p05_seconds": 0.00192695,
+          "p95_seconds": 0.00211633
+        },
+        "lightgbm": {
+          "median_seconds_per_call": 0.00598079,
+          "seconds_per_1k": 0.0029904,
+          "p05_seconds": 0.00585625,
+          "p95_seconds": 0.00711997
+        },
+        "catboost": {
+          "median_seconds_per_call": 0.00102333,
+          "seconds_per_1k": 0.00051167,
+          "p05_seconds": 0.00098847,
+          "p95_seconds": 0.00111942
+        },
+        "logreg": {
+          "median_seconds_per_call": 0.00090171,
+          "seconds_per_1k": 0.00045085,
+          "p05_seconds": 0.00085983,
+          "p95_seconds": 0.00095483
+        }
+      }
+    },
+    "credit_g": {
+      "n_context": 700,
+      "n_test": 300,
+      "models": {
+        "xgboost": {
+          "median_seconds_per_call": 0.0007679,
+          "seconds_per_1k": 0.00255965,
+          "p05_seconds": 0.00074012,
+          "p95_seconds": 0.00083022
+        },
+        "lightgbm": {
+          "median_seconds_per_call": 0.00137681,
+          "seconds_per_1k": 0.00458937,
+          "p05_seconds": 0.00129094,
+          "p95_seconds": 0.00168257
+        },
+        "catboost": {
+          "median_seconds_per_call": 0.00029096,
+          "seconds_per_1k": 0.00096986,
+          "p05_seconds": 0.00027169,
+          "p95_seconds": 0.00046179
+        },
+        "logreg": {
+          "median_seconds_per_call": 0.00034017,
+          "seconds_per_1k": 0.00113389,
+          "p05_seconds": 0.00033437,
+          "p95_seconds": 0.00036837
+        }
+      }
+    },
+    "heloc": {
+      "n_context": 1000,
+      "n_test": 1000,
+      "models": {
+        "xgboost": {
+          "median_seconds_per_call": 0.00127738,
+          "seconds_per_1k": 0.00127738,
+          "p05_seconds": 0.00122232,
+          "p95_seconds": 0.00134536
+        },
+        "lightgbm": {
+          "median_seconds_per_call": 0.0043075,
+          "seconds_per_1k": 0.0043075,
+          "p05_seconds": 0.00416517,
+          "p95_seconds": 0.00446164
+        },
+        "catboost": {
+          "median_seconds_per_call": 0.00062869,
+          "seconds_per_1k": 0.00062869,
+          "p05_seconds": 0.00048521,
+          "p95_seconds": 0.00065906
+        },
+        "logreg": {
+          "median_seconds_per_call": 0.00039404,
+          "seconds_per_1k": 0.00039404,
+          "p05_seconds": 0.00038787,
+          "p95_seconds": 0.00042989
+        }
+      }
+    },
+    "bank_marketing": {
+      "n_context": 1000,
+      "n_test": 1000,
+      "models": {
+        "xgboost": {
+          "median_seconds_per_call": 0.00096508,
+          "seconds_per_1k": 0.00096508,
+          "p05_seconds": 0.00091619,
+          "p95_seconds": 0.00103698
+        },
+        "lightgbm": {
+          "median_seconds_per_call": 0.00468398,
+          "seconds_per_1k": 0.00468398,
+          "p05_seconds": 0.00457299,
+          "p95_seconds": 0.00494695
+        },
+        "catboost": {
+          "median_seconds_per_call": 0.00056252,
+          "seconds_per_1k": 0.00056252,
+          "p05_seconds": 0.00050195,
+          "p95_seconds": 0.00059332
+        },
+        "logreg": {
+          "median_seconds_per_call": 0.00036823,
+          "seconds_per_1k": 0.00036823,
+          "p05_seconds": 0.00036262,
+          "p95_seconds": 0.00039007
+        }
+      }
+    },
+    "kdd_appetency": {
+      "n_context": 1000,
+      "n_test": 3000,
+      "models": {
+        "xgboost": {
+          "median_seconds_per_call": 0.00438469,
+          "seconds_per_1k": 0.00146156,
+          "p05_seconds": 0.00426159,
+          "p95_seconds": 0.00463026
+        },
+        "lightgbm": {
+          "median_seconds_per_call": 0.00860244,
+          "seconds_per_1k": 0.00286748,
+          "p05_seconds": 0.00841003,
+          "p95_seconds": 0.00889769
+        },
+        "catboost": {
+          "median_seconds_per_call": 0.00223483,
+          "seconds_per_1k": 0.00074494,
+          "p05_seconds": 0.00205347,
+          "p95_seconds": 0.00254778
+        },
+        "logreg": {
+          "median_seconds_per_call": 0.00410008,
+          "seconds_per_1k": 0.00136669,
+          "p05_seconds": 0.00381344,
+          "p95_seconds": 0.00420228
+        }
+      }
+    }
+  }
+}

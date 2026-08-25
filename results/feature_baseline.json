@@ -1,0 +1,217 @@
+{
+  "seed": 1234,
+  "datasets": {
+    "ev_battery": {
+      "n_rows_total": 200000,
+      "n_columns_total": 67,
+      "missing_cells_total": 533554,
+      "n_test": 2000,
+      "n_numeric_scored": 59,
+      "best": 0.95892,
+      "above_0_90": 10,
+      "above_0_80": 16,
+      "top": [
+        {
+          "feature": "capacity_loss_percent",
+          "auc": 0.95892
+        },
+        {
+          "feature": "aging_score",
+          "auc": 0.95869
+        },
+        {
+          "feature": "battery_health_percent",
+          "auc": 0.95858
+        },
+        {
+          "feature": "state_of_health",
+          "auc": 0.95833
+        },
+        {
+          "feature": "cell_voltage_std",
+          "auc": 0.9534
+        },
+        {
+          "feature": "voltage_imbalance",
+          "auc": 0.93697
+        },
+        {
+          "feature": "predicted_remaining_life_cycles",
+          "auc": 0.91971
+        },
+        {
+          "feature": "charge_efficiency",
+          "auc": 0.91484
+        }
+      ]
+    },
+    "credit_g": {
+      "n_rows_total": 1000,
+      "n_columns_total": 20,
+      "missing_cells_total": 0,
+      "n_test": 300,
+      "n_numeric_scored": 7,
+      "best": 0.57952,
+      "above_0_90": 0,
+      "above_0_80": 0,
+      "top": [
+        {
+          "feature": "age",
+          "auc": 0.57952
+        },
+        {
+          "feature": "duration",
+          "auc": 0.5472
+        },
+        {
+          "feature": "installment_commitment",
+          "auc": 0.5369
+        },
+        {
+          "feature": "credit_amount",
+          "auc": 0.53399
+        },
+        {
+          "feature": "num_dependents",
+          "auc": 0.52222
+        },
+        {
+          "feature": "existing_credits",
+          "auc": 0.52175
+        },
+        {
+          "feature": "residence_since",
+          "auc": 0.50458
+        }
+      ]
+    },
+    "heloc": {
+      "n_rows_total": 10459,
+      "n_columns_total": 23,
+      "missing_cells_total": 0,
+      "n_test": 1000,
+      "n_numeric_scored": 23,
+      "best": 0.74959,
+      "above_0_90": 0,
+      "above_0_80": 0,
+      "top": [
+        {
+          "feature": "ExternalRiskEstimate",
+          "auc": 0.74959
+        },
+        {
+          "feature": "NetFractionRevolvingBurden",
+          "auc": 0.67689
+        },
+        {
+          "feature": "PercentTradesWBalance",
+          "auc": 0.66085
+        },
+        {
+          "feature": "PercentTradesNeverDelq",
+          "auc": 0.62628
+        },
+        {
+          "feature": "MaxDelq2PublicRecLast12M",
+          "auc": 0.62336
+        },
+        {
+          "feature": "AverageMInFile",
+          "auc": 0.62097
+        },
+        {
+          "feature": "NumBank2NatlTradesWHighUtilization",
+          "auc": 0.60371
+        },
+        {
+          "feature": "NumInqLast6M",
+          "auc": 0.59917
+        }
+      ]
+    },
+    "bank_marketing": {
+      "n_rows_total": 45211,
+      "n_columns_total": 16,
+      "missing_cells_total": 0,
+      "n_test": 1000,
+      "n_numeric_scored": 7,
+      "best": 0.82091,
+      "above_0_90": 0,
+      "above_0_80": 1,
+      "top": [
+        {
+          "feature": "V12",
+          "auc": 0.82091
+        },
+        {
+          "feature": "V15",
+          "auc": 0.59552
+        },
+        {
+          "feature": "V13",
+          "auc": 0.58749
+        },
+        {
+          "feature": "V14",
+          "auc": 0.58074
+        },
+        {
+          "feature": "V6",
+          "auc": 0.56101
+        },
+        {
+          "feature": "V10",
+          "auc": 0.55025
+        },
+        {
+          "feature": "V1",
+          "auc": 0.51765
+        }
+      ]
+    },
+    "kdd_appetency": {
+      "n_rows_total": 50000,
+      "n_columns_total": 212,
+      "missing_cells_total": 6727959,
+      "n_test": 3000,
+      "n_numeric_scored": 43,
+      "best": 0.78125,
+      "above_0_90": 0,
+      "above_0_80": 0,
+      "top": [
+        {
+          "feature": "Var126",
+          "auc": 0.78125
+        },
+        {
+          "feature": "Var51",
+          "auc": 0.67891
+        },
+        {
+          "feature": "Var153",
+          "auc": 0.63246
+        },
+        {
+          "feature": "Var189",
+          "auc": 0.59478
+        },
+        {
+          "feature": "Var28",
+          "auc": 0.59022
+        },
+        {
+          "feature": "Var123",
+          "auc": 0.58399
+        },
+        {
+          "feature": "Var81",
+          "auc": 0.58281
+        },
+        {
+          "feature": "Var38",
+          "auc": 0.5732
+        }
+      ]
+    }
+  }
+}

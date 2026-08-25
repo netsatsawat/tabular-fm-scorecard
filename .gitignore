@@ -1,0 +1,13 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Datasets are downloaded, never redistributed. The Kaggle set is synthetic and
+# licensed by its author; the OpenML caches are rebuilt by scripts/datasets.py on
+# first use. See NOTICE.md.
+data/
+
+# Model weights are never vendored. TabFM's are non-commercial and its licence
+# forbids redistribution outright.

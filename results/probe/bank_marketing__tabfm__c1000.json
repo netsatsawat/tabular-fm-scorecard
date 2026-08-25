@@ -1,0 +1,36 @@
+{
+  "model": "tabfm",
+  "dataset": "bank_marketing",
+  "n_context_requested": 1000,
+  "n_test_requested": 1000,
+  "seed": 1234,
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "python": "3.12.13",
+  "status": "ok",
+  "n_context": 1000,
+  "n_test": 1000,
+  "positive_rate_train": 0.117,
+  "positive_rate_test": 0.117,
+  "n_positives_test": 117,
+  "n_features": 16,
+  "warnings": [],
+  "auc": 0.94205,
+  "fit_seconds": 0.064,
+  "predict_seconds": 4312.768,
+  "predict_seconds_per_1k": 4312.7678,
+  "peak_rss_gb": 10.19,
+  "proba_min": 0.00017,
+  "proba_max": 0.929742,
+  "proba_mean": 0.108769,
+  "n_unique_proba": 991,
+  "meta": {
+    "n_estimators": 32,
+    "max_num_rows": null,
+    "max_num_features": 500,
+    "classes_": [
+      "0",
+      "1"
+    ]
+  },
+  "wall_seconds": 4324.1
+}

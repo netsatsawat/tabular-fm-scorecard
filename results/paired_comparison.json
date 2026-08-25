@@ -1,0 +1,334 @@
+[
+  {
+    "dataset": "credit_g",
+    "control": "xgboost",
+    "control_auc": 0.7535,
+    "n_test": 300,
+    "n_positives": 90,
+    "n_context": 700,
+    "bootstrap_draws": 5000,
+    "holm_family_size": 6,
+    "tree_representation": {
+      "xgboost": "ordinal",
+      "lightgbm": "ordinal",
+      "catboost": "ordinal"
+    },
+    "rows": [
+      {
+        "model": "tabdpt",
+        "auc": 0.7779,
+        "delta": 0.0244,
+        "ci_lo": -0.0121,
+        "ci_hi": 0.0635,
+        "p_raw": 0.1876,
+        "p_below": null,
+        "p_holm": 0.7504,
+        "beats_control": false
+      },
+      {
+        "model": "tabfm",
+        "auc": 0.7666,
+        "delta": 0.0131,
+        "ci_lo": -0.0201,
+        "ci_hi": 0.0463,
+        "p_raw": 0.446,
+        "p_below": null,
+        "p_holm": 1.0,
+        "beats_control": false
+      },
+      {
+        "model": "tabicl",
+        "auc": 0.7614,
+        "delta": 0.0079,
+        "ci_lo": -0.0219,
+        "ci_hi": 0.0375,
+        "p_raw": 0.6132,
+        "p_below": null,
+        "p_holm": 1.0,
+        "beats_control": false
+      },
+      {
+        "model": "catboost",
+        "auc": 0.745,
+        "delta": -0.0085,
+        "ci_lo": -0.0328,
+        "ci_hi": 0.0161,
+        "p_raw": 0.5164,
+        "p_below": null,
+        "p_holm": 1.0,
+        "beats_control": false
+      },
+      {
+        "model": "lightgbm",
+        "auc": 0.7322,
+        "delta": -0.0213,
+        "ci_lo": -0.0406,
+        "ci_hi": -0.0021,
+        "p_raw": 0.0276,
+        "p_below": null,
+        "p_holm": 0.138,
+        "beats_control": false
+      },
+      {
+        "model": "logreg",
+        "auc": 0.6633,
+        "delta": -0.0902,
+        "ci_lo": -0.1462,
+        "ci_hi": -0.0361,
+        "p_raw": 0.0016,
+        "p_below": null,
+        "p_holm": 0.0096,
+        "beats_control": false
+      }
+    ]
+  },
+  {
+    "dataset": "heloc",
+    "control": "logreg",
+    "control_auc": 0.8017,
+    "n_test": 1000,
+    "n_positives": 478,
+    "n_context": 1000,
+    "bootstrap_draws": 5000,
+    "holm_family_size": 6,
+    "tree_representation": {
+      "xgboost": "categorical",
+      "lightgbm": "categorical",
+      "catboost": "categorical"
+    },
+    "rows": [
+      {
+        "model": "tabfm",
+        "auc": 0.8247,
+        "delta": 0.023,
+        "ci_lo": 0.0079,
+        "ci_hi": 0.0387,
+        "p_raw": 0.0032,
+        "p_below": null,
+        "p_holm": 0.0192,
+        "beats_control": true
+      },
+      {
+        "model": "tabicl",
+        "auc": 0.8217,
+        "delta": 0.0199,
+        "ci_lo": 0.0047,
+        "ci_hi": 0.0357,
+        "p_raw": 0.0092,
+        "p_below": null,
+        "p_holm": 0.046,
+        "beats_control": true
+      },
+      {
+        "model": "tabdpt",
+        "auc": 0.8104,
+        "delta": 0.0086,
+        "ci_lo": -0.0047,
+        "ci_hi": 0.0213,
+        "p_raw": 0.1984,
+        "p_below": null,
+        "p_holm": 0.4572,
+        "beats_control": false
+      },
+      {
+        "model": "catboost",
+        "auc": 0.7914,
+        "delta": -0.0103,
+        "ci_lo": -0.0305,
+        "ci_hi": 0.01,
+        "p_raw": 0.318,
+        "p_below": null,
+        "p_holm": 0.4572,
+        "beats_control": false
+      },
+      {
+        "model": "xgboost",
+        "auc": 0.7868,
+        "delta": -0.015,
+        "ci_lo": -0.0354,
+        "ci_hi": 0.006,
+        "p_raw": 0.1524,
+        "p_below": null,
+        "p_holm": 0.4572,
+        "beats_control": false
+      },
+      {
+        "model": "lightgbm",
+        "auc": 0.7824,
+        "delta": -0.0194,
+        "ci_lo": -0.0423,
+        "ci_hi": 0.0038,
+        "p_raw": 0.0976,
+        "p_below": null,
+        "p_holm": 0.3904,
+        "beats_control": false
+      }
+    ]
+  },
+  {
+    "dataset": "bank_marketing",
+    "control": "catboost",
+    "control_auc": 0.9227,
+    "n_test": 1000,
+    "n_positives": 117,
+    "n_context": 1000,
+    "bootstrap_draws": 5000,
+    "holm_family_size": 6,
+    "tree_representation": {
+      "xgboost": "categorical",
+      "lightgbm": "ordinal",
+      "catboost": "categorical"
+    },
+    "rows": [
+      {
+        "model": "tabfm",
+        "auc": 0.942,
+        "delta": 0.0194,
+        "ci_lo": 0.0045,
+        "ci_hi": 0.0355,
+        "p_raw": 0.0088,
+        "p_below": null,
+        "p_holm": 0.0288,
+        "beats_control": true
+      },
+      {
+        "model": "tabicl",
+        "auc": 0.936,
+        "delta": 0.0133,
+        "ci_lo": 0.0037,
+        "ci_hi": 0.024,
+        "p_raw": 0.0072,
+        "p_below": null,
+        "p_holm": 0.0288,
+        "beats_control": true
+      },
+      {
+        "model": "tabdpt",
+        "auc": 0.9235,
+        "delta": 0.0008,
+        "ci_lo": -0.0126,
+        "ci_hi": 0.0155,
+        "p_raw": 0.9292,
+        "p_below": null,
+        "p_holm": 0.9292,
+        "beats_control": false
+      },
+      {
+        "model": "xgboost",
+        "auc": 0.908,
+        "delta": -0.0147,
+        "ci_lo": -0.0314,
+        "ci_hi": 0.0011,
+        "p_raw": 0.0716,
+        "p_below": null,
+        "p_holm": 0.1432,
+        "beats_control": false
+      },
+      {
+        "model": "lightgbm",
+        "auc": 0.898,
+        "delta": -0.0247,
+        "ci_lo": -0.0415,
+        "ci_hi": -0.0078,
+        "p_raw": 0.004,
+        "p_below": null,
+        "p_holm": 0.02,
+        "beats_control": false
+      },
+      {
+        "model": "logreg",
+        "auc": 0.869,
+        "delta": -0.0537,
+        "ci_lo": -0.0778,
+        "ci_hi": -0.0314,
+        "p_raw": 0.0,
+        "p_below": 0.0004,
+        "p_holm": 0.0,
+        "beats_control": false
+      }
+    ]
+  },
+  {
+    "dataset": "kdd_appetency",
+    "control": "logreg",
+    "control_auc": 0.6926,
+    "n_test": 3000,
+    "n_positives": 53,
+    "n_context": 1000,
+    "bootstrap_draws": 5000,
+    "holm_family_size": 6,
+    "tree_representation": {
+      "xgboost": "ordinal",
+      "lightgbm": "categorical",
+      "catboost": "categorical"
+    },
+    "rows": [
+      {
+        "model": "tabfm",
+        "auc": 0.7163,
+        "delta": 0.0238,
+        "ci_lo": -0.0478,
+        "ci_hi": 0.1008,
+        "p_raw": 0.5436,
+        "p_below": null,
+        "p_holm": 1.0,
+        "beats_control": false
+      },
+      {
+        "model": "catboost",
+        "auc": 0.6699,
+        "delta": -0.0227,
+        "ci_lo": -0.1039,
+        "ci_hi": 0.056,
+        "p_raw": 0.5744,
+        "p_below": null,
+        "p_holm": 1.0,
+        "beats_control": false
+      },
+      {
+        "model": "xgboost",
+        "auc": 0.6693,
+        "delta": -0.0233,
+        "ci_lo": -0.1092,
+        "ci_hi": 0.0628,
+        "p_raw": 0.5856,
+        "p_below": null,
+        "p_holm": 1.0,
+        "beats_control": false
+      },
+      {
+        "model": "lightgbm",
+        "auc": 0.6446,
+        "delta": -0.048,
+        "ci_lo": -0.126,
+        "ci_hi": 0.0315,
+        "p_raw": 0.2452,
+        "p_below": null,
+        "p_holm": 0.9808,
+        "beats_control": false
+      },
+      {
+        "model": "tabdpt",
+        "auc": 0.5961,
+        "delta": -0.0965,
+        "ci_lo": -0.1808,
+        "ci_hi": -0.0055,
+        "p_raw": 0.0372,
+        "p_below": null,
+        "p_holm": 0.186,
+        "beats_control": false
+      },
+      {
+        "model": "tabicl",
+        "auc": 0.5867,
+        "delta": -0.1059,
+        "ci_lo": -0.1839,
+        "ci_hi": -0.0281,
+        "p_raw": 0.0068,
+        "p_below": null,
+        "p_holm": 0.0408,
+        "beats_control": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "seed": 1234,
+  "model": "lightgbm",
+  "datasets": {
+    "credit_g": {
+      "n_test": 300,
+      "capped": {
+        "n_train": 700,
+        "auc": 0.72259
+      },
+      "full": {
+        "n_train": 700,
+        "auc": 0.72259
+      },
+      "gain": 0.0
+    },
+    "heloc": {
+      "n_test": 1000,
+      "capped": {
+        "n_train": 1000,
+        "auc": 0.78239
+      },
+      "full": {
+        "n_train": 9459,
+        "auc": 0.81495
+      },
+      "gain": 0.03256
+    },
+    "bank_marketing": {
+      "n_test": 1000,
+      "capped": {
+        "n_train": 1000,
+        "auc": 0.893
+      },
+      "full": {
+        "n_train": 44211,
+        "auc": 0.94205
+      },
+      "gain": 0.04905
+    },
+    "kdd_appetency": {
+      "n_test": 3000,
+      "capped": {
+        "n_train": 1000,
+        "auc": 0.64459
+      },
+      "full": {
+        "n_train": 47000,
+        "auc": 0.77414
+      },
+      "gain": 0.12955
+    }
+  }
+}

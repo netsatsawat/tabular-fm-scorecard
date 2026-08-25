@@ -1,0 +1,32 @@
+{
+  "model": "tabdpt",
+  "dataset": "kdd_appetency",
+  "n_context_requested": 1000,
+  "n_test_requested": 3000,
+  "seed": 1234,
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "python": "3.12.13",
+  "status": "ok",
+  "n_context": 1000,
+  "n_test": 3000,
+  "positive_rate_train": 0.018,
+  "positive_rate_test": 0.0177,
+  "n_positives_test": 53,
+  "n_features": 212,
+  "warnings": [
+    "builtin type SwigPyObject has no __module__ attribute",
+    "builtin type SwigPyPacked has no __module__ attribute",
+    "builtin type swigvarlink has no __module__ attribute"
+  ],
+  "auc": 0.59612,
+  "fit_seconds": 0.026,
+  "predict_seconds": 0.68,
+  "predict_seconds_per_1k": 0.2267,
+  "peak_rss_gb": 1.01,
+  "proba_min": 0.002081,
+  "proba_max": 0.302786,
+  "proba_mean": 0.020764,
+  "n_unique_proba": 2999,
+  "meta": {},
+  "wall_seconds": 2.6
+}

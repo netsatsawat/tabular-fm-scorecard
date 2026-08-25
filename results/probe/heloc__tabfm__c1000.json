@@ -1,0 +1,36 @@
+{
+  "model": "tabfm",
+  "dataset": "heloc",
+  "n_context_requested": 1000,
+  "n_test_requested": 1000,
+  "seed": 1234,
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "python": "3.12.13",
+  "status": "ok",
+  "n_context": 1000,
+  "n_test": 1000,
+  "positive_rate_train": 0.478,
+  "positive_rate_test": 0.478,
+  "n_positives_test": 478,
+  "n_features": 23,
+  "warnings": [],
+  "auc": 0.82474,
+  "fit_seconds": 0.072,
+  "predict_seconds": 4627.998,
+  "predict_seconds_per_1k": 4627.9978,
+  "peak_rss_gb": 11.36,
+  "proba_min": 0.033532,
+  "proba_max": 0.957029,
+  "proba_mean": 0.464613,
+  "n_unique_proba": 923,
+  "meta": {
+    "n_estimators": 32,
+    "max_num_rows": null,
+    "max_num_features": 500,
+    "classes_": [
+      "0",
+      "1"
+    ]
+  },
+  "wall_seconds": 4639.0
+}
