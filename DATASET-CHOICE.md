@@ -8,7 +8,7 @@ It is a good bed for a runnability probe and a bad one for a model comparison. B
 halves of that need stating, because the second half is easy to forget once numbers
 start appearing.
 
-## It is synthetic, and says so
+## It is synthetic
 
 From the dataset's own `feature_descriptions.md`:
 
@@ -46,7 +46,7 @@ driver of the whole dataset" and defines `battery_health_percent` as `100 − ca
 These are the generative variables. The label is downstream of them, so recovering it is
 close to reading it off.
 
-## Which leaves no headroom
+## That leaves no headroom
 
 With 2,000 training rows and a 2,000-row held-out set:
 
@@ -66,7 +66,7 @@ median-imputed features, having spent 16,776.951 seconds to the linear model's 0
 There is nothing here for a foundation model to win. Any two of these sit inside each
 other's noise, and a ranking built on this table would be measuring the resampling seed.
 
-## So what it is for
+## What it is for
 
 Exactly one thing: **does the model run on this machine, and what does it cost.**
 
@@ -76,7 +76,7 @@ A library that imports, fits, predicts and returns 0.62 has failed even though i
 exception. Silent wrongness is the failure mode that matters with these libraries, and a
 saturated dataset catches it.
 
-It is also honest about scale. 200,000 rows with 67 usable features is a realistic size for
+It is also large. 200,000 rows with 67 usable features is a realistic size for
 an in-context model to choke on, which is the cost question worth measuring.
 
 ## What replaced it

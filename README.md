@@ -106,7 +106,7 @@ describes. Running both on `credit_g`: 1637.799 seconds against 51.297, for 0.00
 
 On the telecom data TabFM scored 0.7164 and TabICL scored 0.5867. Two tools sold under the
 same label, 0.13 AUC apart on the same rows, a wider gap than the whole tree field showed.
-"Tabular foundation model" is not one thing yet.
+So on this data, "tabular foundation model" is not really one category.
 
 And the model that tops the leaderboard, TabFM, ships non-commercial weights. The strongest
 result here is the one a business is least able to use, and no leaderboard has a column for
@@ -144,8 +144,7 @@ direction it points, so it is conservative for a win and anti-conservative for a
 within one split, not across resplits.
 
 **The trees are untuned.** Fixed sensible settings, no search. A tuned baseline would narrow
-every gap reported here, which cuts against the foundation model on the finding that matters
-most.
+every gap reported here, which cuts against the foundation model on the main finding.
 
 **One seed, one split, CPU only.** These are not TabArena-grade measurements and are not meant
 to be.

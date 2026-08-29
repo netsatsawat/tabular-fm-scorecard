@@ -1,7 +1,7 @@
 # Research notes
 
-The lab journal. Dead ends and corrections are half the value of the exercise, so they
-are written down here rather than quietly fixed.
+The lab journal. The dead ends and corrections are half the point, so I write them down
+here instead of quietly fixing them.
 
 ## 1. The model field
 
@@ -18,7 +18,7 @@ downloading weights:
 > inference, but no interactive terminal is available.
 
 Clearing it needs a browser session at `ux.priorlabs.ai`, an accepted licence, and a
-`TABPFN_TOKEN` environment variable. This is worth stating plainly because TabPFN is the
+`TABPFN_TOKEN` environment variable. That is worth stating, because TabPFN is the
 model most often described as the open alternative, and it is the one that cannot go into
 CI without a human first.
 
@@ -51,7 +51,7 @@ returning nothing without saying so.
 TabFM 1.0.1 handles it. From `classifier_and_regressor.py`:
 
 > Accept object dtype and the pandas string dtype (incl. the pyarrow-backed default in
-> pandas>=3); otherwise date-as-text columns load as 'string', fail this object-only gate,
+> pandas>=3). Otherwise date-as-text columns load as 'string', fail this object-only gate,
 > and silently fall through to categorical.
 
 The probe still asserts on accuracy rather than on the absence of an exception, because
@@ -108,8 +108,8 @@ recorded inside each probe is reported as a figure but never divided by.
 Every model is scored against the strongest classical model on its dataset, chosen after
 seeing the test scores.
 
-The first version of this note said that was conservative, full stop. That is only half
-true and the missing half matters. Argmax selection maximises the reported gap in whichever
+The first version of this note said that was conservative, full stop. It is only half
+true, and the part it leaves out matters. Argmax selection maximises the reported gap in whichever
 direction it points: conservative when a foundation model wins, anti-conservative when it
 loses. So the negative result on `kdd_appetency` is an upper bound on the deficit rather
 than a fair estimate of it, and the write-up now says so.

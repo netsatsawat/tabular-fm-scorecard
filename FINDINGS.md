@@ -49,10 +49,10 @@ dataset's control. It is not applied across the four datasets.
 That is 4 wins that clear Holm correction across 2 datasets. Nothing survives on `credit_g`
 or `kdd_appetency`.
 
-Two points of AUC is worth money on a credit book. It is also a long way from the picture
-the leaderboards paint.
+Two points of AUC is worth money on a credit book. It is also a long way from what
+the leaderboards suggest.
 
-## The comparison is capped at a size the foundation models chose
+## The row cap comes from the foundation models, not the problem
 
 Every model above was trained on 700 or 1,000 rows. That cap exists because TabFM's cost
 grows with context multiplied by query, and larger runs were not affordable on a CPU. A
@@ -97,11 +97,11 @@ tree is ahead by more than five points and still cannot prove it, because 53 pos
 will not resolve anything.
 
 This does not make the earlier wins fake. They are real at a thousand rows, and there are
-problems where a thousand rows is all you have. It does mean the win is a statement about
-a regime, and the regime was set by the constraint the foundation model brings rather than
-by the problem.
+problems where a thousand rows is all you have. It does mean the win only holds when
+the data is small, and that limit came from the foundation model's cost rather than
+from the problem.
 
-## The largest margin is the one that cannot be confirmed
+## The biggest gap is the one I cannot confirm
 
 On `credit_g`, TabDPT scores 0.7779 against XGBoost's 0.7535. That gap of +0.0244 is larger
 than any confirmed win in this study. It does not survive: the Holm-adjusted p is 0.7504
@@ -110,7 +110,7 @@ and the interval runs from -0.0121 to +0.0635.
 The reason is the test set. `credit_g` holds 1,000 rows in total, so a held-out third
 leaves 300 rows carrying 90 positives. Too few to separate models two points apart.
 
-That is worth dwelling on. The dataset most often reached for to argue that foundation
+The dataset most often reached for to argue that foundation
 models win on small data is too small to demonstrate it. A benchmark that reported the
 point estimate and stopped would have called this a win.
 
@@ -136,14 +136,14 @@ at the bottom, where TabICL's deficit of -0.1059 clears Holm at p = 0.0408.
 
 The interesting part is the spread inside the foundation models. TabFM at 0.7164 and
 TabICL at 0.5867 are 0.13 AUC apart on the same rows, which is larger than the distance
-between the best and worst tree. Treating "tabular foundation models" as one category
-does not survive contact with this dataset.
+between the best and worst tree. So "tabular foundation models" is not really
+one category on this data.
 
 TabFM took 7 hours 15 minutes to produce those 3,000 predictions, or 8,702 seconds per
 thousand. The uncapped LightGBM reaches 0.7741 on the same test rows, above TabFM, using
 47,000 training rows and 0.0065 seconds per thousand.
 
-Why the two in-context models that lose, lose, follows from how they work. They do not
+The two in-context models that lose do so because of how they work. They do not
 train. Your rows go in as context and the answer is worked out from them fresh on every
 call, so at a 1.78% positive rate a 1,000-row context gives the model roughly 18
 conversions to reason from and nothing else.
@@ -224,11 +224,11 @@ simplest model is competitive. Test before believing otherwise.
 If you serve predictions at volume, accuracy stops being the question. Nothing here
 justifies four thousand seconds per thousand rows.
 
-One constraint sits above all of it. TabFM's weights are non-commercial, so the two wins it
+One constraint overrides all of it. TabFM's weights are non-commercial, so the two wins it
 took cannot be carried into a commercial deployment at all. The strongest model in this
 study is the one you are least able to use.
 
-## What would change the answer
+## What could change this
 
 **One seed and one split.** Every result is a single partition. The paired bootstrap
 quantifies uncertainty within that split, not across resplits. TabArena's published
