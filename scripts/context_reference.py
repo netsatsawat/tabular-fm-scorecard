@@ -50,12 +50,22 @@ def main():
         assert np.array_equal(yte, yte2), f"{dataset}: test split moved"
 
         row = {"n_test": int(len(yte))}
+        proba = {}
         for label, (Xtr, ytr) in {"capped": (Xc, yc), "full": (Xf, yf)}.items():
             tr, te, cats = as_categorical(Xtr, Xte)
             m = tree(cats)
             m.fit(tr, ytr)
-            auc = float(roc_auc_score(yte, m.predict_proba(te)[:, 1]))
+            proba[label] = m.predict_proba(te)[:, 1]
+            auc = float(roc_auc_score(yte, proba[label]))
             row[label] = {"n_train": int(len(ytr)), "auc": round(auc, 5)}
+
+        # Saved so the uncapped tree can be compared against a foundation model on
+        # the same rows. A difference of 0.0001 is not a result unless you can show
+        # what the interval around it looks like.
+        np.savez_compressed(
+            REPO / "results" / "probe" / f"{dataset}__lightgbm_full__c{len(yf)}.npz",
+            proba=proba["full"], y_true=yte.astype("int64"),
+        )
         row["gain"] = round(row["full"]["auc"] - row["capped"]["auc"], 5)
         out["datasets"][dataset] = row
         print(f"{dataset:16s} capped n={row['capped']['n_train']:>6} "

@@ -1,0 +1,54 @@
+{
+  "seed": 1234,
+  "bootstrap": 5000,
+  "datasets": {
+    "bank_marketing": {
+      "delta": -0.0,
+      "ci_lo": -0.0077,
+      "ci_hi": 0.0076,
+      "p": 0.9956,
+      "draws": 5000,
+      "auc_tree_uncapped": 0.94205,
+      "auc_tabfm_capped": 0.94205,
+      "raw_difference": -1.1102230246251565e-16,
+      "n_test": 1000,
+      "n_train_tree": 44211
+    },
+    "credit_g": {
+      "delta": -0.043968,
+      "ci_lo": -0.087,
+      "ci_hi": 0.0,
+      "p": 0.0504,
+      "draws": 5000,
+      "auc_tree_uncapped": 0.72259,
+      "auc_tabfm_capped": 0.76656,
+      "raw_difference": -0.04396825396825399,
+      "n_test": 300,
+      "n_train_tree": 700
+    },
+    "heloc": {
+      "delta": -0.009797,
+      "ci_lo": -0.0235,
+      "ci_hi": 0.0039,
+      "p": 0.1632,
+      "draws": 5000,
+      "auc_tree_uncapped": 0.81495,
+      "auc_tabfm_capped": 0.82474,
+      "raw_difference": -0.009796966927972495,
+      "n_test": 1000,
+      "n_train_tree": 9459
+    },
+    "kdd_appetency": {
+      "delta": 0.057788,
+      "ci_lo": -0.0079,
+      "ci_hi": 0.1315,
+      "p": 0.0868,
+      "draws": 5000,
+      "auc_tree_uncapped": 0.77414,
+      "auc_tabfm_capped": 0.71635,
+      "raw_difference": 0.057788220832186266,
+      "n_test": 3000,
+      "n_train_tree": 47000
+    }
+  }
+}

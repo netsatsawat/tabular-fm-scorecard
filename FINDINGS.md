@@ -46,8 +46,8 @@ dataset's control. It is not applied across the four datasets.
 | `bank_marketing` | TabFM | 0.9420 | +0.0194 over CatBoost | [+0.0045, +0.0355] | 0.0288 |
 | `bank_marketing` | TabICL | 0.9360 | +0.0133 | [+0.0037, +0.0240] | 0.0288 |
 
-That is 4 confirmed wins across 2 datasets. Nothing survives on `credit_g` or
-`kdd_appetency`.
+That is 4 wins that clear Holm correction across 2 datasets. Nothing survives on `credit_g`
+or `kdd_appetency`.
 
 Two points of AUC is worth money on a credit book. It is also a long way from the picture
 the leaderboards paint.
@@ -68,19 +68,38 @@ scored on the identical test rows ([`scripts/context_reference.py`](scripts/cont
 | `bank_marketing` | 0.8930 | 1000 | 0.9421 | 44211 | +0.0491 |
 | `kdd_appetency` | 0.6446 | 1000 | 0.7741 | 47000 | +0.1295 |
 
-Read the `bank_marketing` row against the table above it. LightGBM on all 44,211 rows
-scores 0.9421. TabFM, on 1,000 context rows, scored 0.9420.
+Read the bank marketing row. Both models score 0.94205. Not close: identical, to the
+limit of floating point, with a raw difference of about 1e-16.
 
-The gradient boosting machine catches the foundation model exactly, using data it already
-has, at under a hundredth of a second per thousand predictions.
+I first wrote that up as 0.9421 against 0.9420, which looked like a narrow win for the
+tree. It was not a win. It was one number rounded two different ways, and quoting AUC to
+four places manufactured a gap that does not exist.
 
-On `kdd_appetency` the uncapped tree reaches 0.7741 and every foundation model sits below
-0.60. On `credit_g` nothing changes, because the dataset only has 1,000 rows and the cap
-was never binding.
+So I ran the paired bootstrap on it, the same one the rest of the study uses, on the same
+held-out rows:
 
-This does not make the wins above fake. They are real at 1,000 rows, and there are settings
-where 1,000 rows is all you have. It does mean the win is a statement about a regime, and
-the regime was set by the constraint the foundation model brings, not by the problem.
+| dataset | TabFM (1,000 rows) | tree (all rows) | tree rows | 95% CI on the gap | p |
+|---|---|---|---|---|---|
+| German credit | 0.76656 | 0.72259 | 700 | [-0.0870, +0.0000] | 0.0504 |
+| FICO home equity | 0.82474 | 0.81495 | 9,459 | [-0.0235, +0.0039] | 0.1632 |
+| Bank marketing | 0.94205 | 0.94205 | 44,211 | [-0.0077, +0.0076] | 0.9956 |
+| Telecom appetency | 0.71635 | 0.77414 | 47,000 | [-0.0079, +0.1315] | 0.0868 |
+
+**Four datasets, four ties.** Not one difference between TabFM and a tree with its own
+data is significant. The closest to separating is German credit at p = 0.0504, and that
+one runs in TabFM's favour on a dataset small enough that the cap never bound.
+
+The tree draws level using data the business already has, at roughly a hundredth of a
+second per thousand predictions against TabFM's 4,313.
+
+On the telecom data the uncapped tree reaches 0.77414 while TabFM sits at 0.71635. The
+tree is ahead by more than five points and still cannot prove it, because 53 positives
+will not resolve anything.
+
+This does not make the earlier wins fake. They are real at a thousand rows, and there are
+problems where a thousand rows is all you have. It does mean the win is a statement about
+a regime, and the regime was set by the constraint the foundation model brings rather than
+by the problem.
 
 ## The largest margin is the one that cannot be confirmed
 
@@ -126,11 +145,13 @@ thousand. The uncapped LightGBM reaches 0.7741 on the same test rows, above TabF
 
 Why the two in-context models that lose, lose, follows from how they work. They do not
 train. Your rows go in as context and the answer is worked out from them fresh on every
-call, which means that at a 1.78% positive rate in a 1,000-row context the model is
-reasoning from roughly 18 conversions and nothing else.
+call, so at a 1.78% positive rate a 1,000-row context gives the model roughly 18
+conversions to reason from and nothing else.
 
-A tree sees the same 18. It gets to keep what it learned from them, and it can be handed
-47,000 rows instead.
+At that size the tree has the same 18, and it does not overtake by holding onto them
+better. It overtakes once it is handed 47,000 rows, which carry roughly 837 conversions
+instead of 18. Why two of the foundation models fall below the floor while the third clears
+it is a question of architecture, not of how many positives each one keeps.
 
 Rare events are not an edge case in business data. Fraud, churn, default and conversion are
 all rare by construction, and they are most of what a commercial data science team is asked

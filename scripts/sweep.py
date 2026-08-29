@@ -1,7 +1,7 @@
 """Run the real-data sweep: every model on every dataset, identical splits.
 
 Split sizes are fixed per dataset rather than globally, for two reasons. The test
-split has to carry enough positives for ROC AUC to mean anything — a 1.78% positive
+split has to carry enough positives for ROC AUC to mean anything: a 1.78% positive
 rate needs thousands of rows to get past a hundred events. And TabFM's cost grows
 with context multiplied by query, so a size that is free for a tree is hours for it.
 

@@ -36,6 +36,7 @@ PAIRED = REPO / "results" / "paired_comparison.json"
 TIMING = REPO / "results" / "baseline_timing.json"
 CONTEXT = REPO / "results" / "context_reference.json"
 FEATURE = REPO / "results" / "feature_baseline.json"
+SHOWDOWN = REPO / "results" / "showdown.json"
 
 problems = []
 
@@ -142,6 +143,15 @@ def build_known():
             for t in block.get("top", []):
                 add(t["auc"])
 
+    if SHOWDOWN.exists():
+        for row in json.loads(SHOWDOWN.read_text())["datasets"].values():
+            for key in ("auc_tree_uncapped", "auc_tabfm_capped", "p",
+                        "n_test", "n_train_tree", "draws"):
+                add(row.get(key))
+            for key in ("delta", "ci_lo", "ci_hi"):
+                if row.get(key) is not None:
+                    add(abs(row[key]))
+
     if CONTEXT.exists():
         for row in json.loads(CONTEXT.read_text())["datasets"].values():
             add(row.get("n_test"))
@@ -229,7 +239,8 @@ def main():
                 for r in b["rows"] if r["beats_control"]]
         n_won = len({d for d, _ in wins})
         phrases = {f"{len(wins)} confirmed wins",
-                   f"{len(wins)} confirmed wins across {n_won} datasets"}
+                   f"{len(wins)} confirmed wins across {n_won} datasets",
+                   f"{len(wins)} wins that clear Holm correction across {n_won} datasets"}
         check("stated win count matches the artifact",
               any(p in corpus for p in phrases),
               f"artifact: {len(wins)} wins over {n_won} datasets {wins}")

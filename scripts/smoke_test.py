@@ -4,7 +4,7 @@ This answers 'does the library run at all on this machine', which is a different
 question from the real-data comparison in sweep.py. It writes to results/probe_ev/
 and never touches results/probe/.
 
-The question this answers is 'does it run on this machine, and at what cost' —
+The question this answers is 'does it run on this machine, and at what cost',
 not 'which model is better'. Every probe is isolated so an out-of-memory kill or a
 native crash is recorded as a result rather than ending the sweep.
 

@@ -267,7 +267,10 @@ def main():
         "n_context_requested": n_context,
         "n_test_requested": n_test,
         "seed": SEED,
-        "platform": platform.platform(),
+        # Record the compute class, not the host. The OS version and architecture
+        # identify a specific machine and do not belong in a committed artifact; "cpu"
+        # is the load-bearing fact for the cost numbers.
+        "device": "cpu",
         "python": platform.python_version(),
         "status": "unknown",
     }

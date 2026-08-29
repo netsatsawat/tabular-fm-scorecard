@@ -3,7 +3,7 @@
   "n_context": 2000,
   "n_test": 2000,
   "seed": 1234,
-  "platform": "macOS-26.5-arm64-arm-64bit",
+  "device": "cpu",
   "python": "3.12.13",
   "status": "ok",
   "positive_rate_train": 0.0995,

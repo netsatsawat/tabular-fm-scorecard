@@ -16,7 +16,7 @@ import pandas as pd
 REPO = Path(__file__).resolve().parent.parent
 
 # The original synthetic probe set, kept so its results stay reproducible. It is not
-# in the real-data registry on purpose — see DATASET-CHOICE.md.
+# in the real-data registry on purpose (see DATASET-CHOICE.md).
 EV_CSV = REPO / "data" / "ev_battery_failure_dataset.csv"
 EV_TARGET = "battery_failure"
 EV_DROP = ["vehicle_id", "battery_serial"]

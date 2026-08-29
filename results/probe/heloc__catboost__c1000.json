@@ -4,7 +4,7 @@
   "n_context_requested": 1000,
   "n_test_requested": 1000,
   "seed": 1234,
-  "platform": "macOS-26.5-arm64-arm-64bit",
+  "device": "cpu",
   "python": "3.12.13",
   "status": "ok",
   "n_context": 1000,

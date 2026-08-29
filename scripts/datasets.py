@@ -1,6 +1,6 @@
 """Registry of real datasets, fetched from OpenML and cached to data/.
 
-Every entry is observed data — no synthetic tables. The EV battery set the first
+Every entry is observed data, not a synthetic table. The EV battery set the first
 probe used is deliberately absent: it is synthetic and saturated, and its role was
 to prove the harness works, not to rank anything (see DATASET-CHOICE.md).
 
