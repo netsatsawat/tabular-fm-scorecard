@@ -38,5 +38,7 @@ Downloading weights also requires a one-time licence acceptance and a `TABPFN_TO
 ## Dataset
 
 [EV Battery Failure Prediction Dataset (200k)](https://www.kaggle.com/datasets/sarveshchhetri/ev-battery-failure-prediction-dataset-200k),
-retrieved via the Kaggle API. Synthetic, by its author's own description. Not redistributed
-here. `data/` is gitignored and the download is a documented step.
+synthetic by its author's own description. It is read from a local CSV by
+`scripts/prep.py`, and no code in this repository downloads it. `data/` is gitignored, so
+the file is not redistributed here and must be obtained from Kaggle separately before the
+runnability probe can run.
