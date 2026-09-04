@@ -260,6 +260,10 @@ def main():
     key, dataset = sys.argv[1], sys.argv[2]
     n_context, n_test = int(sys.argv[3]), int(sys.argv[4])
     out_path = Path(sys.argv[5])
+    # Create the output folder up front. The .npz is written inside the try block below,
+    # so without this a fresh output folder makes that write throw and the run is recorded
+    # as status="error" even though the model ran fine.
+    out_path.parent.mkdir(parents=True, exist_ok=True)
 
     record = {
         "model": key,
@@ -328,7 +332,6 @@ def main():
             peak_rss_gb=round(peak_rss_gb(), 2),
         )
 
-    out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(record, indent=2))
     print(json.dumps({k: record.get(k) for k in ("model", "dataset", "n_context", "status")}))
 
